@@ -87,6 +87,7 @@ export default class Login extends React.Component{
 
 }
 // axios({
+  
 //   method: 'get',
 //   url: 'http://bit.ly/2mTM3nY',
 //   responseType: 'stream'
