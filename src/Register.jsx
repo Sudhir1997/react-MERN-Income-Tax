@@ -9,18 +9,20 @@ import {
 } from "react-spinners-kit";
 
 import "./cssmodules/register.css";
-
+import Zoom from 'react-reveal/Zoom';
+import Roll from 'react-reveal/Roll';
+import Fade from 'react-reveal/Fade';
 
 
 import styled, { keyframes } from 'styled-components';
-import { bounce } from 'react-animations';
+import { bounce,fadeInDown } from 'react-animations';
 
 export default class Register extends React.Component {
   state = { display: null };
 
   helperDisplay() {
     setTimeout(() => {
-      this.setState({ display: true });
+      this.setState({ display:true });
     }, 3000);
   }
 //Handler Functions 
@@ -40,20 +42,19 @@ handlerCountry(event){
   }
 
   render() {
-    const bounceAnimation = keyframes`${bounce}`;
-    const BouncyDiv = styled.div`
-  animation: 1s ${bounceAnimation};
-`;
+    
     if (this.state.display === null) {
       return (
+        <Fade>
         <div id="main">
           <RotateSpinner size={90} color={"#123abc"} />
         </div>
+        </Fade>
       );
-    } else {
+    } else if(this.state.display===true) {
       return (
         <>
-       
+       <Fade bottom>
         <h2 id="heading">Register Form</h2>
 
 
@@ -163,9 +164,16 @@ handlerCountry(event){
           </div>
          <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
         </form>
-       
+       </Fade>
         </>
       );
+    }
+    else if(this.state.display===23){
+      const bounceAnimation = keyframes`${fadeInDown}`;
+    const BouncyDiv = styled.div`
+  animation: 10s ${bounceAnimation};
+`;
+    return <Fade top> <h1> Hello World </h1></Fade>
     }
   }
 }
