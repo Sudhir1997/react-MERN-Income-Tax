@@ -8,7 +8,7 @@ import {
   FlapperSpinner
 } from "react-spinners-kit";
 
-import "./cssmodules/register.css";
+import "./../cssmodules/register.css";
 import Zoom from 'react-reveal/Zoom';
 import Roll from 'react-reveal/Roll';
 import Fade from 'react-reveal/Fade';
